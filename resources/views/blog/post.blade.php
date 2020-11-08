@@ -58,10 +58,10 @@
 				<!-- Begin Top Meta -->
 				<div class="row post-top-meta">
 					<div class="col-md-2">
-						<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+						<a href="{{route ('author')}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 					</div>
 					<div class="col-md-10">
-						<a class="link-dark" href="author.html">Sal</a><a href="#" class="btn follow">Follow</a>
+						<a class="link-dark" href="{{route ('author')}}">Sal</a><a href="#" class="btn follow">Follow</a>
 						<span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
 						<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
 					</div>
@@ -126,21 +126,21 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="post.html">
+					<a href="{{route ('post')}}">
 						<img class="img-fluid img-thumb" src="assets/blog/img/demopic/9.jpg" alt="">
 					</a>
 					<div class="card-block">
-						<h2 class="card-title"><a href="post.html">Best recreational places to visit on a holiday</a></h2>
+						<h2 class="card-title"><a href="{{route ('post')}}">Best recreational places to visit on a holiday</a></h2>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-									<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+									<a href="{{route ('author')}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 								</span>
 								<span class="author-meta">
-									<span class="post-name"><a href="author.html">Sal</a></span><br />
+									<span class="post-name"><a href="{{route ('author')}}">Sal</a></span><br />
 									<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
 								</span>
-								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+								<span class="post-read-more"><a href="{{route ('post')}}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
 											<path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
 										</svg></a></span>
 							</div>
@@ -153,21 +153,21 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="post.html">
+					<a href="{{route ('post')}}">
 						<img class="img-fluid img-thumb" src="assets/blog/img/demopic/8.jpg" alt="">
 					</a>
 					<div class="card-block">
-						<h2 class="card-title"><a href="post.html">How travelling can change your life</a></h2>
+						<h2 class="card-title"><a href="{{route ('post')}}">How travelling can change your life</a></h2>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-									<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+									<a href="{{route ('author')}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 								</span>
 								<span class="author-meta">
-									<span class="post-name"><a href="author.html">Sal</a></span><br />
+									<span class="post-name"><a href="{{route ('author')}}">Sal</a></span><br />
 									<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
 								</span>
-								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+								<span class="post-read-more"><a href="{{route ('post')}}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
 											<path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
 										</svg></a></span>
 							</div>
@@ -180,21 +180,21 @@
 			<!-- begin post -->
 			<div class="col-md-4">
 				<div class="card">
-					<a href="post.html">
+					<a href="{{route ('post')}}">
 						<img class="img-fluid img-thumb" src="assets/blog/img/demopic/7.jpg" alt="">
 					</a>
 					<div class="card-block">
-						<h2 class="card-title"><a href="post.html">Little red dress and a perfect summer</a></h2>
+						<h2 class="card-title"><a href="{{route ('post')}}">Little red dress and a perfect summer</a></h2>
 						<div class="metafooter">
 							<div class="wrapfooter">
 								<span class="meta-footer-thumb">
-									<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+									<a href="{{route ('author')}}"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
 								</span>
 								<span class="author-meta">
-									<span class="post-name"><a href="author.html">Sal</a></span><br />
+									<span class="post-name"><a href="{{route ('author')}}">Sal</a></span><br />
 									<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
 								</span>
-								<span class="post-read-more"><a href="post.html" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
+								<span class="post-read-more"><a href="{{route ('post')}}" title="Read Story"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25">
 											<path d="M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z" fill-rule="evenodd"></path>
 										</svg></a></span>
 							</div>
@@ -209,18 +209,5 @@
 </div>
 <!-- End Related Posts
 ================================================== -->
-
-
-
-<!-- Begin AlertBar
-================================================== -->
-<div class="alertbar">
-	<div class="container text-center">
-		<img src="assets/blog/img/logo.png" alt=""> &nbsp; Never miss a <b>story</b> from us, get weekly updates in your inbox. <a href="#" class="btn subscribe">Get Updates</a>
-	</div>
-</div>
-<!-- End AlertBar
-================================================== -->
-
 
 @endsection
