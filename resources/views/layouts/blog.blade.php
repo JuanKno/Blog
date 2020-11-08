@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/blog/css/mediumish.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -45,7 +47,7 @@
                     </li>
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Get Started</a>
+                        <a class="nav-link bg-green rounded-pill" href="{{ route('login') }}">Get Started</a>
                     </li>
                     @endguest
                     @auth
