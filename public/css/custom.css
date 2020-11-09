@@ -2,6 +2,11 @@
   color: #1C9963 !important;
 }
 
+.text-green:hover {
+  color: #0d9259 !important;
+  font-weight: 400;
+}
+
 .bg-green {
   background-color: #1C9963;
   color: white !important;

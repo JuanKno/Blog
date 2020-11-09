@@ -29,7 +29,7 @@
         </button>
         <div class="container">
             <!-- Begin Logo -->
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand  btn btn-sm" href="/">
                 <img src="{{ asset('assets/blog/img/logo.png') }}" alt="logo">
             </a>
             <!-- End Logo -->
@@ -37,17 +37,17 @@
                 <!-- Begin Menu -->
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
-                        <a class="nav-link" href="/">Stories <span class="sr-only">(current)</span></a>
+                        <a class="nav-link btn btn-sm" href="/">Stories <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item {{ Request::is('post') ? 'active' :  ''}}">
-                        <a class="nav-link" href="{{ route('post') }}">Post</a>
+                        <a class="nav-link btn btn-sm" href="{{ route('post') }}">Post</a>
                     </li>
                     <li class="nav-item {{ Request::is('author') ? 'active' :  ''}}">
-                        <a class="nav-link" href="{{ route('author') }}">Author</a>
+                        <a class="nav-link btn btn-sm" href="{{ route('author') }}">Author</a>
                     </li>
                     @guest
                     <li class="nav-item">
-                        <a class="nav-link bg-green rounded-pill" href="{{ route('login') }}">Get Started</a>
+                        <a class="nav-link btn btn-sm text-green" href="{{ route('login') }}">Get Started</a>
                     </li>
                     @endguest
                     @auth
