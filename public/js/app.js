@@ -37343,16 +37343,28 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/sass/icons.scss":
+/*!***********************************!*\
+  !*** ./resources/sass/icons.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/custom.scss ***!
-  \******************************************************************************************/
+/*!**********************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/custom.scss ./resources/sass/icons.scss ***!
+  \**********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\xampp\htdocs\blog\resources\js\app.js */"./resources/js/app.js");
 __webpack_require__(/*! C:\xampp\htdocs\blog\resources\sass\app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\blog\resources\sass\custom.scss */"./resources/sass/custom.scss");
+__webpack_require__(/*! C:\xampp\htdocs\blog\resources\sass\custom.scss */"./resources/sass/custom.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\blog\resources\sass\icons.scss */"./resources/sass/icons.scss");
 
 
 /***/ })

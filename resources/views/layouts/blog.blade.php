@@ -11,7 +11,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('assets/blog/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ asset('assets/blog/css/mediumish.css') }}" rel="stylesheet">
@@ -51,9 +51,14 @@
                     </li>
                     @endguest
                     @auth
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    <div class="navbar-item">
+                        <a class="nav-link btn btn-sm" href="{{ route('home') }}" role="button">
                             {{ Auth::user()->name }}
+                        </a>
+                    </div>
+                    <li class="nav-item dropdown">
+
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
