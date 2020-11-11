@@ -16,7 +16,8 @@ class PostController extends Controller
 
     public function featured()
     {
-        return Post::orderBy('id','DESC')->limit(4)->get();
+    
+        return Post::orderBy('id','DESC')->limit(4)->with('user')->get();
     }
 
   
