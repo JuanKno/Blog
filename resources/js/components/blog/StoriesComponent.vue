@@ -5,7 +5,7 @@
         </div>
         <div class="card-columns listrecent">
             <!-- begin post -->
-            <div class="card" v-for="storie in stories" :key="storie.id">
+            <div class="card card-stories" v-for="storie in stories" :key="storie.id">
                 <a href="post">
                     <img
                         class="img-fluid"

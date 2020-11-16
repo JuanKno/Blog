@@ -37950,7 +37950,7 @@ var render = function() {
       "div",
       { staticClass: "card-columns listrecent" },
       _vm._l(_vm.stories, function(storie) {
-        return _c("div", { key: storie.id, staticClass: "card" }, [
+        return _c("div", { key: storie.id, staticClass: "card card-stories" }, [
           _c("a", { attrs: { href: "post" } }, [
             _c("img", {
               staticClass: "img-fluid",
