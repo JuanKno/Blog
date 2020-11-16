@@ -37808,7 +37808,7 @@ var render = function() {
               _c("div", { staticClass: "card-block" }, [
                 _c("h2", { staticClass: "card-title" }, [
                   _c("a", { attrs: { href: "post" } }, [
-                    _vm._v(_vm._s(post.title))
+                    _vm._v(_vm._s(_vm._f("truncate")(post.title, 63, "...")))
                   ])
                 ]),
                 _vm._v(" "),
@@ -50236,11 +50236,7 @@ Vue.component('blog-component', __webpack_require__(/*! ./components/blog/BlogCo
 Vue.component('stories-component', __webpack_require__(/*! ./components/blog/StoriesComponent.vue */ "./resources/js/components/blog/StoriesComponent.vue")["default"]);
 Vue.component('featured-component', __webpack_require__(/*! ./components/blog/FeaturedComponent.vue */ "./resources/js/components/blog/FeaturedComponent.vue")["default"]);
 Vue.filter('truncate', function (text, length, suffix) {
-  if (text.length > length) {
-    return text.substring(0, length) + suffix;
-  } else {
-    return text;
-  }
+  return text.length > length ? text.substring(0, length) + suffix : text;
 });
 var app = new Vue({
   el: '#app'

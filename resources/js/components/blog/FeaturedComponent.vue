@@ -20,7 +20,7 @@
                         <div class="card-block">
                             <h2 class="card-title">
                                 <a href="post"
-                                    >{{post.title}}</a
+                                    >{{post.title | truncate(63, '...')}}</a
                                 >
                             </h2>
                             <h4 class="card-text">
