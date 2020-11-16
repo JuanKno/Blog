@@ -19,7 +19,7 @@
 
         <!-- Begin List Posts
 	================================================== -->
-        <post-component></post-component>
+        <stories-component></stories-component>
         <!-- End List Posts
 	================================================== -->
     </div>

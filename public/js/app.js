@@ -2044,17 +2044,17 @@ __webpack_require__.r(__webpack_exports__);
       });
     }
   },
-  mounted: function mounted() {
+  created: function created() {
     this.listFeatured();
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2128,292 +2128,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log("Component mounted.");
-  }
+  data: function data() {
+    return {
+      stories: []
+    };
+  },
+  methods: {
+    listStories: function listStories() {
+      var _this = this;
+
+      axios.get("/api/stories").then(function (response) {
+        _this.stories = response.data;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
+  },
+  created: function created() {
+    this.listStories();
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -38016,7 +37751,7 @@ var render = function() {
       _vm._v(" "),
       _c("featured-component"),
       _vm._v(" "),
-      _c("post-component")
+      _c("stories-component")
     ],
     1
   )
@@ -38193,10 +37928,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a&":
-/*!*********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a& ***!
-  \*********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c& ***!
+  \************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -38211,265 +37946,85 @@ var render = function() {
   return _c("section", { staticClass: "recent-posts" }, [
     _vm._m(0),
     _vm._v(" "),
-    _c("div", { staticClass: "card-columns listrecent" }, [
-      _c("div", { staticClass: "card" }, [
-        _vm._m(1),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(2),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
+    _c(
+      "div",
+      { staticClass: "card-columns listrecent" },
+      _vm._l(_vm.stories, function(storie) {
+        return _c("div", { key: storie.id, staticClass: "card" }, [
+          _c("a", { attrs: { href: "post" } }, [
+            _c("img", {
+              staticClass: "img-fluid",
+              attrs: { src: "assets/blog/img/demopic/7.jpg", alt: storie.title }
+            })
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
+          _c("div", { staticClass: "card-block" }, [
+            _c("h2", { staticClass: "card-title" }, [
+              _c("a", { attrs: { href: "post" } }, [
+                _vm._v(_vm._s(_vm._f("truncate")(storie.title, 60, "...")))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("h4", { staticClass: "card-text" }, [
+              _vm._v(
+                "\n                    " +
+                  _vm._s(_vm._f("truncate")(storie.extract, 105, "...")) +
+                  "\n                "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "metafooter" }, [
+              _c("div", { staticClass: "wrapfooter" }, [
+                _vm._m(1, true),
+                _vm._v(" "),
+                _c("span", { staticClass: "author-meta" }, [
+                  _c("span", { staticClass: "post-name" }, [
+                    _c("a", { attrs: { href: "author" } }, [
+                      _vm._v(_vm._s(storie.user.name))
+                    ])
+                  ]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "post-date" }, [
+                    _vm._v(_vm._s(storie.created_at))
+                  ]),
+                  _c("span", { staticClass: "dot" }),
+                  _c("span", { staticClass: "post-read" }, [
+                    _vm._v("6 min read")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "post-read-more" }, [
+                  _c("a", { attrs: { href: "post", title: "Read Story" } }, [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "svgIcon-use",
                         attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
+                          width: "25",
+                          height: "25",
+                          viewbox: "0 0 25 25"
                         }
-                      })
-                    ]
-                  )
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d:
+                              "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
+                            "fill-rule": "evenodd"
+                          }
+                        })
+                      ]
+                    )
+                  ])
                 ])
               ])
             ])
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(5),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(6),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._m(8),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(9),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(10),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(11),
-              _vm._v(" "),
-              _vm._m(12),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(13),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(14),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(15),
-              _vm._v(" "),
-              _vm._m(16),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(17),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(18),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(19),
-              _vm._v(" "),
-              _vm._m(20),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(21),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-block" }, [
-          _vm._m(22),
-          _vm._v(" "),
-          _c("h4", { staticClass: "card-text" }, [
-            _vm._v(
-              "\n                    This is a longer card with supporting text below as a\n                    natural lead-in to additional content. This content is a\n                    little bit longer.\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "metafooter" }, [
-            _c("div", { staticClass: "wrapfooter" }, [
-              _vm._m(23),
-              _vm._v(" "),
-              _vm._m(24),
-              _vm._v(" "),
-              _c("span", { staticClass: "post-read-more" }, [
-                _c("a", { attrs: { href: "post", title: "Read Story" } }, [
-                  _c(
-                    "svg",
-                    {
-                      staticClass: "svgIcon-use",
-                      attrs: { width: "25", height: "25", viewbox: "0 0 25 25" }
-                    },
-                    [
-                      _c("path", {
-                        attrs: {
-                          d:
-                            "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                          "fill-rule": "evenodd"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
+      }),
+      0
+    )
   ])
 }
 var staticRenderFns = [
@@ -38485,27 +38040,6 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/5.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v("Autumn doesn't have to be nostalgic, you know?")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("span", { staticClass: "meta-footer-thumb" }, [
       _c("a", { attrs: { href: "author" } }, [
         _c("img", {
@@ -38517,288 +38051,6 @@ var staticRenderFns = [
           }
         })
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/6.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v("Best galleries in the world with photos")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/7.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v("Little red dress and a perfect summer")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/8.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v("Thinking outside the box can help you prosper")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/9.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v(
-          "10 Things you should know about choosing your\n                        house"
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "post" } }, [
-      _c("img", {
-        staticClass: "img-fluid",
-        attrs: { src: "assets/blog/img/demopic/10.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h2", { staticClass: "card-title" }, [
-      _c("a", { attrs: { href: "post" } }, [
-        _vm._v("Visiting the world means learning cultures")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "author-meta" }, [
-      _c("span", { staticClass: "post-name" }, [
-        _c("a", { attrs: { href: "author" } }, [_vm._v("Sal")])
-      ]),
-      _c("br"),
-      _vm._v(" "),
-      _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-      _c("span", { staticClass: "dot" }),
-      _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
     ])
   }
 ]
@@ -50981,8 +50233,15 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 Vue.component('blog-component', __webpack_require__(/*! ./components/blog/BlogComponent.vue */ "./resources/js/components/blog/BlogComponent.vue")["default"]);
-Vue.component('post-component', __webpack_require__(/*! ./components/blog/PostComponent.vue */ "./resources/js/components/blog/PostComponent.vue")["default"]);
+Vue.component('stories-component', __webpack_require__(/*! ./components/blog/StoriesComponent.vue */ "./resources/js/components/blog/StoriesComponent.vue")["default"]);
 Vue.component('featured-component', __webpack_require__(/*! ./components/blog/FeaturedComponent.vue */ "./resources/js/components/blog/FeaturedComponent.vue")["default"]);
+Vue.filter('truncate', function (text, length, suffix) {
+  if (text.length > length) {
+    return text.substring(0, length) + suffix;
+  } else {
+    return text;
+  }
+});
 var app = new Vue({
   el: '#app'
 });
@@ -51172,17 +50431,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/blog/PostComponent.vue":
-/*!********************************************************!*\
-  !*** ./resources/js/components/blog/PostComponent.vue ***!
-  \********************************************************/
+/***/ "./resources/js/components/blog/StoriesComponent.vue":
+/*!***********************************************************!*\
+  !*** ./resources/js/components/blog/StoriesComponent.vue ***!
+  \***********************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PostComponent.vue?vue&type=template&id=786f840a& */ "./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a&");
-/* harmony import */ var _PostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PostComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StoriesComponent.vue?vue&type=template&id=212d741c& */ "./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c&");
+/* harmony import */ var _StoriesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StoriesComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -51192,9 +50451,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _PostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _StoriesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -51204,38 +50463,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/blog/PostComponent.vue"
+component.options.__file = "resources/js/components/blog/StoriesComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************!*\
-  !*** ./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************/
+/***/ "./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js&":
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/PostComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StoriesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./StoriesComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/StoriesComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_StoriesComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a&":
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a& ***!
-  \***************************************************************************************/
+/***/ "./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c& ***!
+  \******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./PostComponent.vue?vue&type=template&id=786f840a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/PostComponent.vue?vue&type=template&id=786f840a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./StoriesComponent.vue?vue&type=template&id=212d741c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/blog/StoriesComponent.vue?vue&type=template&id=212d741c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PostComponent_vue_vue_type_template_id_786f840a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_StoriesComponent_vue_vue_type_template_id_212d741c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
