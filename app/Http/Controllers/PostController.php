@@ -10,21 +10,30 @@ class PostController extends Controller
 
     public function index()
     {
-        return Post::orderBy('id','DESC')->paginate();
+        return Post::orderBy('id', 'DESC')->paginate();
     }
 
 
     public function featured()
     {
 
-        return Post::orderBy('id','DESC')->limit(4)->with('user')->get();
+        return Post::orderBy('id', 'DESC')->limit(4)->with('user')->get();
     }
 
-    public function stories()
+    public function stories(Request $request)
     {
-        return Post::orderBy('id','DESC')->limit(6)->with('user')->get();
+        $stories = Post::orderBy('id', 'DESC')->with('user')->paginate(6);
 
+        return [
+            'pagination' => [
+                'total'        => $stories->total(),
+                'current_page' => $stories->currentPage(),
+                'per_page'     => $stories->perPage(),
+                'last_page'    => $stories->lastPage(),
+                'from'         => $stories->firstItem(),
+                'to'           => $stories->lastItem(),
+            ],
+            'stories' => $stories
+        ];
     }
-
-
 }

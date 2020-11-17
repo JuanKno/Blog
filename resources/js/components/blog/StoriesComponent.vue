@@ -5,7 +5,11 @@
         </div>
         <div class="card-columns listrecent">
             <!-- begin post -->
-            <div class="card card-stories" v-for="storie in stories" :key="storie.id">
+            <div
+                class="card card-stories"
+                v-for="storie in stories"
+                :key="storie.id"
+            >
                 <a href="post">
                     <img
                         class="img-fluid"
@@ -63,6 +67,44 @@
             </div>
             <!-- end post -->
         </div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item" v-if="pagination.current_page > 1">
+                    <a
+                        class="page-link"
+                        href="#"
+                        @click.prevent="changePage(pagination.current_page - 1)"
+                    >
+                        <span>Atras</span>
+                    </a>
+                </li>
+
+                <li
+                    v-for="page in pagesNumber"
+                    :key="page"
+                    :class="page == isActive ? 'page-item active' : 'page-item'"
+                >
+                    <a
+                        class="page-link"
+                        href="#"
+                        @click.prevent="changePage(page)"
+                        >{{ page }}</a
+                    >
+                </li>
+
+                <li
+                    class="page-item"
+                    v-if="pagination.current_page < pagination.last_page"
+                >
+                    <a
+                        class="page-link"
+                        href="#"
+                        @click.prevent="changePage(pagination.current_page + 1)"
+                        ><span>Siguinte</span></a
+                    >
+                </li>
+            </ul>
+        </nav>
     </section>
 </template>
 
@@ -70,19 +112,58 @@
 export default {
     data() {
         return {
-            stories: []
+            stories: [],
+            pagination: {
+                total: 0,
+                current_page: 0,
+                per_page: 0,
+                last_page: 0,
+                from: 0,
+                to: 0
+            },
+            offset: 2
         };
     },
+    computed: {
+        isActive: function() {
+            return this.pagination.current_page;
+        },
+        pagesNumber: function() {
+            if (!this.pagination.to) {
+                return [];
+            }
+            var from = this.pagination.current_page - this.offset;
+            from < 1 ? (from = 1) : (from = from);
+
+            var to = from + this.offset * 2;
+            to >= this.pagination.last_page
+                ? (to = this.pagination.last_page)
+                : (to = to);
+
+            var pagesArray = [];
+            while (from <= to) {
+                pagesArray.push(from);
+                from++;
+            }
+            return pagesArray;
+        }
+    },
     methods: {
-        listStories() {
+        listStories: function(page) {
             axios
-                .get("/api/stories")
+                .get("/api/stories?page=" + page)
                 .then(response => {
-                    this.stories = response.data;
+                    this.stories = response.data.stories.data;
+                    this.pagination = response.data.pagination;
+                    console.log(this.pagination);
                 })
                 .catch(e => {
                     console.log(e);
                 });
+        },
+        changePage: function(page) {
+            this.pagination.current_page = page;
+            this.listStories(page);
         }
     },
     created() {

@@ -2128,21 +2128,101 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      stories: []
+      stories: [],
+      pagination: {
+        total: 0,
+        current_page: 0,
+        per_page: 0,
+        last_page: 0,
+        from: 0,
+        to: 0
+      },
+      offset: 2
     };
   },
+  computed: {
+    isActive: function isActive() {
+      return this.pagination.current_page;
+    },
+    pagesNumber: function pagesNumber() {
+      if (!this.pagination.to) {
+        return [];
+      }
+
+      var from = this.pagination.current_page - this.offset;
+      from < 1 ? from = 1 : from = from;
+      var to = from + this.offset * 2;
+      to >= this.pagination.last_page ? to = this.pagination.last_page : to = to;
+      var pagesArray = [];
+
+      while (from <= to) {
+        pagesArray.push(from);
+        from++;
+      }
+
+      return pagesArray;
+    }
+  },
   methods: {
-    listStories: function listStories() {
+    listStories: function listStories(page) {
       var _this = this;
 
-      axios.get("/api/stories").then(function (response) {
-        _this.stories = response.data;
+      axios.get("/api/stories?page=" + page).then(function (response) {
+        _this.stories = response.data.stories.data;
+        _this.pagination = response.data.pagination;
+        console.log(_this.pagination);
       })["catch"](function (e) {
         console.log(e);
       });
+    },
+    changePage: function changePage(page) {
+      this.pagination.current_page = page;
+      this.listStories(page);
     }
   },
   created: function created() {
@@ -38024,7 +38104,80 @@ var render = function() {
         ])
       }),
       0
-    )
+    ),
+    _vm._v(" "),
+    _c("nav", { attrs: { "aria-label": "Page navigation" } }, [
+      _c(
+        "ul",
+        { staticClass: "pagination" },
+        [
+          _vm.pagination.current_page > 1
+            ? _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changePage(_vm.pagination.current_page - 1)
+                      }
+                    }
+                  },
+                  [_c("span", [_vm._v("Atras")])]
+                )
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.pagesNumber, function(page) {
+            return _c(
+              "li",
+              {
+                key: page,
+                class: page == _vm.isActive ? "page-item active" : "page-item"
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changePage(page)
+                      }
+                    }
+                  },
+                  [_vm._v(_vm._s(page))]
+                )
+              ]
+            )
+          }),
+          _vm._v(" "),
+          _vm.pagination.current_page < _vm.pagination.last_page
+            ? _c("li", { staticClass: "page-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "page-link",
+                    attrs: { href: "#" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.changePage(_vm.pagination.current_page + 1)
+                      }
+                    }
+                  },
+                  [_c("span", [_vm._v("Siguinte")])]
+                )
+              ])
+            : _vm._e()
+        ],
+        2
+      )
+    ])
   ])
 }
 var staticRenderFns = [
