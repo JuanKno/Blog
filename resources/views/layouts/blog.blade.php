@@ -14,7 +14,7 @@
     <link href="{{ asset('css/icons.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="{{ asset('assets/blog/css/mediumish.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/blog/css/blog.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 
 </head>
