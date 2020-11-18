@@ -9,7 +9,7 @@ class BlogController extends Controller
 {
     public function index()
     {
-        return view('blog.welcome');
+        return view('layouts.blog');
     }
 
     public function post()

@@ -10,18 +10,18 @@
                 v-for="storie in stories"
                 :key="storie.id"
             >
-                <a href="post">
+                <router-link :to="{ name: 'post', params: { slug: storie.slug }}">
                     <img
                         class="img-fluid"
                         src="assets/blog/img/demopic/7.jpg"
                         :alt="storie.title"
                     />
-                </a>
+                </router-link>
                 <div class="card-block">
                     <h2 class="card-title">
-                        <a href="post">{{
+                        <router-link :to="{ name: 'post', params: { slug: storie.slug }}">{{
                             storie.title | truncate(60, "...")
-                        }}</a>
+                        }}</router-link>
                     </h2>
                     <h4 class="card-text">
                         {{ storie.extract | truncate(105, "...") }}
@@ -155,7 +155,7 @@ export default {
                 .then(response => {
                     this.stories = response.data.stories.data;
                     this.pagination = response.data.pagination;
-                    console.log(this.pagination);
+                    // console.log(this.pagination);
                 })
                 .catch(e => {
                     console.log(e);

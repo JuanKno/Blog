@@ -36,4 +36,9 @@ class PostController extends Controller
             'stories' => $stories
         ];
     }
+
+    public function show(Post $post)
+    {
+        return $post;
+    }
 }

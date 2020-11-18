@@ -1,35 +1,21 @@
 <template>
-    <div class="container">
-        <!-- Begin Site Title
-	================================================== -->
-        <div class="mainheading">
-            <h1 class="sitetitle">Mediumish</h1>
-            <p class="lead">
-                Bootstrap theme, medium style, simply perfect for bloggers
-            </p>
+    <div>
+        <navbar-component></navbar-component>
+
+        <div class="container">
+
+            <transition name="slide-fade" mode="out-in">
+                <router-view></router-view>
+            </transition>
         </div>
-        <!-- End Site Title
-    ================================================== -->
-
-        <!-- Begin Featured
-	================================================== -->
-        <featured-component></featured-component>
-        <!-- End Featured
-	================================================== -->
-
-        <!-- Begin List Posts
-	================================================== -->
-        <stories-component></stories-component>
-        <!-- End List Posts
-	================================================== -->
+        <!-- /.container -->
     </div>
-    <!-- /.container -->
 </template>
 
 <script>
+import NavbarComponent from "./NavbarComponent.vue";
 export default {
-    mounted() {
-        console.log("Component mounted.");
-    }
+    components: { NavbarComponent },
+    mounted() {}
 };
 </script>

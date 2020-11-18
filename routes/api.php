@@ -11,5 +11,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('posts', 'PostController@index');
+Route::get('post/{post:slug}', 'PostController@show');
 Route::get('featured', 'PostController@featured');
 Route::get('stories', 'PostController@stories');

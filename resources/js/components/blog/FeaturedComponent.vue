@@ -4,24 +4,23 @@
             <h2><span>Featured</span></h2>
         </div>
         <div class="card-columns listfeaturedtag">
-
             <!-- begin post -->
             <div class="card" v-for="post in list" :key="post.id">
                 <div class="row">
                     <div class="col-md-5 wrapthumbnail">
-                        <a href="post">
+                        <router-link :to="{ name: 'post', params: { slug: post.slug }}">
                             <div
                                 class="thumbnail"
                                 style="background-image:url(assets/blog/img/demopic/1.jpg);"
                             ></div>
-                        </a>
+                        </router-link>
                     </div>
                     <div class="col-md-7">
                         <div class="card-block">
                             <h2 class="card-title">
-                                <a href="post"
-                                    >{{post.title | truncate(63, '...')}}</a
-                                >
+                                <router-link :to="{ name: 'post', params: { slug: post.slug }}"
+                                    >{{ post.title | truncate(63, "...") }}
+                                </router-link>
                             </h2>
                             <h4 class="card-text">
                                 {{ post.extract }}
@@ -38,10 +37,13 @@
                                     </span>
                                     <span class="author-meta">
                                         <span class="post-name"
-                                            ><a href="author">{{ post.user.name }}</a></span
+                                            ><a href="author">{{
+                                                post.user.name
+                                            }}</a></span
                                         ><br />
-                                        <span class="post-date"
-                                            >{{ post.created_at }}</span
+                                        <span class="post-date">{{
+                                            post.created_at
+                                        }}</span
                                         ><span class="dot"></span
                                         ><span class="post-read"
                                             >6 min read</span
@@ -67,7 +69,6 @@
                 </div>
             </div>
             <!-- end post -->
-
         </div>
     </section>
 </template>
