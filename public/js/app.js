@@ -3024,43 +3024,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({});
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["slug"],
+  data: function data() {
+    return {
+      post: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/post/" + this.slug).then(function (response) {
+      _this.post = response.data;
+      console.log(_this.post);
+    })["catch"](function (e) {
+      console.log(e);
+    });
+  }
+});
 
 /***/ }),
 
@@ -39952,7 +39933,75 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "col-md-8 col-md-offset-2 col-xs-12" }, [
+          _c("div", { staticClass: "mainheading" }, [
+            _c("div", { staticClass: "row post-top-meta" }, [
+              _c(
+                "div",
+                { staticClass: "col-md-2" },
+                [
+                  _c("router-link", { attrs: { to: "author" } }, [
+                    _c("img", {
+                      staticClass: "author-thumb",
+                      attrs: {
+                        src:
+                          "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
+                        alt: "Sal"
+                      }
+                    })
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-md-10" },
+                [
+                  _c("router-link", {
+                    staticClass: "link-dark",
+                    attrs: { to: "author" },
+                    domProps: { textContent: _vm._s(_vm.post.user.name) }
+                  }),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "btn follow", attrs: { href: "#" } }, [
+                    _vm._v("Follow")
+                  ]),
+                  _vm._v(" "),
+                  _c("span", {
+                    staticClass: "author-description",
+                    domProps: { textContent: _vm._s(_vm.post.extract) }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "post-date" }, [
+                    _vm._v(_vm._s(_vm.post.created_at))
+                  ]),
+                  _c("span", { staticClass: "dot" }),
+                  _c("span", { staticClass: "post-read" }, [
+                    _vm._v("6 min read")
+                  ])
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("h1", {
+              staticClass: "posttitle",
+              domProps: { textContent: _vm._s(_vm.post.title) }
+            })
+          ]),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "featured-image img-fluid",
+            attrs: { src: "assets/blog/img/demopic/10.jpg", alt: "" }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "article-post" }, [
+            _c("p", { domProps: { innerHTML: _vm._s(_vm.post.body) } })
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
       ])
     ]),
     _vm._v(" "),
@@ -40126,105 +40175,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-8 col-md-offset-2 col-xs-12" }, [
-      _c("div", { staticClass: "mainheading" }, [
-        _c("div", { staticClass: "row post-top-meta" }, [
-          _c("div", { staticClass: "col-md-2" }, [
-            _c("a", { attrs: { href: "author" } }, [
-              _c("img", {
-                staticClass: "author-thumb",
-                attrs: {
-                  src:
-                    "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-                  alt: "Sal"
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-10" }, [
-            _c("a", { staticClass: "link-dark", attrs: { href: "author" } }, [
-              _vm._v("Sal")
-            ]),
-            _c("a", { staticClass: "btn follow", attrs: { href: "#" } }, [
-              _vm._v("Follow")
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "author-description" }, [
-              _vm._v(
-                "Founder of WowThemes.net and creator of\n                                    "
-              ),
-              _c("b", [_vm._v('"Mediumish"')]),
-              _vm._v(
-                " theme that you're\n                                    currently previewing. Developing\n                                    professional premium themes, templates,\n                                    plugins, scripts since 2012."
-              )
-            ]),
-            _vm._v(" "),
-            _c("span", { staticClass: "post-date" }, [_vm._v("22 July 2017")]),
-            _c("span", { staticClass: "dot" }),
-            _c("span", { staticClass: "post-read" }, [_vm._v("6 min read")])
-          ])
+    return _c("div", { staticClass: "after-post-tags" }, [
+      _c("ul", { staticClass: "tags" }, [
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Design")])]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Growth Mindset")])
         ]),
         _vm._v(" "),
-        _c("h1", { staticClass: "posttitle" }, [
-          _vm._v(
-            "\n                            18 Things You Should Learn Before Moving Into a New\n                            Home\n                        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("img", {
-        staticClass: "featured-image img-fluid",
-        attrs: { src: "assets/blog/img/demopic/10.jpg", alt: "" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "article-post" }, [
-        _c("p", [
-          _vm._v(
-            "\n                            Holy grail funding non-disclosure agreement advisor\n                            ramen bootstrapping ecosystem. Beta crowdfunding\n                            iteration assets business plan paradigm shift\n                            stealth mass market seed money rockstar niche market\n                            marketing buzz market.\n                        "
-          )
-        ]),
+        _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Productivity")])]),
         _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                            Burn rate release facebook termsheet equity\n                            technology. Interaction design rockstar network\n                            effects handshake creative startup direct mailing.\n                            Technology influencer direct mailing deployment\n                            return on investment seed round.\n                        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                            Termsheet business model canvas user experience\n                            churn rate low hanging fruit backing iteration buyer\n                            seed money. Virality release launch party channels\n                            validation learning curve paradigm shift hypotheses\n                            conversion. Stealth leverage freemium venture\n                            startup business-to-business accelerator market.\n                        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("blockquote", [
-          _vm._v(
-            "\n                            Gen-z strategy long tail churn rate seed money\n                            channels user experience incubator startup partner\n                            network low hanging fruit direct mailing. Client\n                            backing success startup assets responsive web design\n                            burn rate A/B testing metrics first mover advantage\n                            conversion.\n                        "
-          )
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "\n                            Freemium non-disclosure agreement lean startup\n                            bootstrapping holy grail ramen MVP iteration\n                            accelerator. Strategy market ramen leverage paradigm\n                            shift seed round entrepreneur crowdfunding social\n                            proof angel investor partner network virality.\n                        "
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "after-post-tags" }, [
-        _c("ul", { staticClass: "tags" }, [
-          _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Design")])]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Growth Mindset")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Productivity")])
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("a", { attrs: { href: "#" } }, [_vm._v("Personal Growth")])
-          ])
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [_vm._v("Personal Growth")])
         ])
       ])
     ])

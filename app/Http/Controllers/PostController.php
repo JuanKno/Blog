@@ -37,8 +37,8 @@ class PostController extends Controller
         ];
     }
 
-    public function show(Post $post)
+    public function show($post)
     {
-        return $post;
+        return Post::where('slug',$post)->with('user')->first();
     }
 }

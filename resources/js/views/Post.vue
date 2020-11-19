@@ -77,34 +77,32 @@
                         <!-- Begin Top Meta -->
                         <div class="row post-top-meta">
                             <div class="col-md-2">
-                                <a href="author"
+                                <router-link to="author"
                                     ><img
                                         class="author-thumb"
                                         src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
                                         alt="Sal"
-                                /></a>
+                                /></router-link>
                             </div>
                             <div class="col-md-10">
-                                <a class="link-dark" href="author">Sal</a
-                                ><a href="#" class="btn follow">Follow</a>
-                                <span class="author-description"
-                                    >Founder of WowThemes.net and creator of
-                                    <b>"Mediumish"</b> theme that you're
-                                    currently previewing. Developing
-                                    professional premium themes, templates,
-                                    plugins, scripts since 2012.</span
+                                <router-link class="link-dark" to="author"
+                                   v-text="post.user.name" ></router-link
                                 >
-                                <span class="post-date">22 July 2017</span
+                                <a href="#" class="btn follow">Follow</a>
+                                <span
+                                    class="author-description"
+                                    v-text="post.extract"
+                                ></span>
+                                <span class="post-date">{{
+                                    post.created_at
+                                }}</span
                                 ><span class="dot"></span
                                 ><span class="post-read">6 min read</span>
                             </div>
                         </div>
                         <!-- End Top Menta -->
 
-                        <h1 class="posttitle">
-                            18 Things You Should Learn Before Moving Into a New
-                            Home
-                        </h1>
+                        <h1 class="posttitle" v-text="post.title"></h1>
                     </div>
 
                     <!-- Begin Featured Image -->
@@ -117,42 +115,8 @@
 
                     <!-- Begin Post Content -->
                     <div class="article-post">
-                        <p>
-                            Holy grail funding non-disclosure agreement advisor
-                            ramen bootstrapping ecosystem. Beta crowdfunding
-                            iteration assets business plan paradigm shift
-                            stealth mass market seed money rockstar niche market
-                            marketing buzz market.
-                        </p>
-                        <p>
-                            Burn rate release facebook termsheet equity
-                            technology. Interaction design rockstar network
-                            effects handshake creative startup direct mailing.
-                            Technology influencer direct mailing deployment
-                            return on investment seed round.
-                        </p>
-                        <p>
-                            Termsheet business model canvas user experience
-                            churn rate low hanging fruit backing iteration buyer
-                            seed money. Virality release launch party channels
-                            validation learning curve paradigm shift hypotheses
-                            conversion. Stealth leverage freemium venture
-                            startup business-to-business accelerator market.
-                        </p>
-                        <blockquote>
-                            Gen-z strategy long tail churn rate seed money
-                            channels user experience incubator startup partner
-                            network low hanging fruit direct mailing. Client
-                            backing success startup assets responsive web design
-                            burn rate A/B testing metrics first mover advantage
-                            conversion.
-                        </blockquote>
-                        <p>
-                            Freemium non-disclosure agreement lean startup
-                            bootstrapping holy grail ramen MVP iteration
-                            accelerator. Strategy market ramen leverage paradigm
-                            shift seed round entrepreneur crowdfunding social
-                            proof angel investor partner network virality.
+                        <p v-html="post.body">
+
                         </p>
                     </div>
                     <!-- End Post Content -->
@@ -362,5 +326,24 @@
 </template>
 
 <script>
-export default {};
+export default {
+    props: ["slug"],
+    data() {
+        return {
+            post: {}
+        };
+    },
+
+    created() {
+        axios
+            .get("/api/post/" + this.slug)
+            .then(response => {
+                this.post = response.data;
+                // console.log(this.post);
+            })
+            .catch(e => {
+                console.log(e);
+            });
+    }
+};
 </script>
