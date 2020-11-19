@@ -15,15 +15,15 @@ export default new Router({
             component: require('./views/Author').default
         },
         {
-            path: '/post/:slug',
+            path: '/:slug',
             name: 'post',
             component: require('./views/Post').default,
             props: true
         },
-        // {
-        //     path: '*',
-        //     component: require('./views/404').default
-        // },
+        {
+            path: '*',
+            component: require('./views/404').default
+        },
     ],
     mode: 'history'
 });

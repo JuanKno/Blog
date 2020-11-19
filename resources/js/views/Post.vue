@@ -187,7 +187,7 @@
                             <a href="post">
                                 <img
                                     class="img-fluid img-thumb"
-                                    src="assets/blog/img/demopic/9.jpg"
+                                    :src="'assets/blog/img/demopic/9.jpg'"
                                     alt=""
                                 />
                             </a>
@@ -245,7 +245,7 @@
                             <a href="post">
                                 <img
                                     class="img-fluid img-thumb"
-                                    src="assets/blog/img/demopic/8.jpg"
+                                    :src="'assets/blog/img/demopic/8.jpg'"
                                     alt=""
                                 />
                             </a>
@@ -302,7 +302,7 @@
                             <a href="post">
                                 <img
                                     class="img-fluid img-thumb"
-                                    src="assets/blog/img/demopic/7.jpg"
+                                    :src="'assets/blog/img/demopic/7.jpg'"
                                     alt=""
                                 />
                             </a>
