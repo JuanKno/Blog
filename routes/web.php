@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', 'Blog\BlogController@index');
+Route::get('{any}', 'Blog\BlogController@index')->where('any','.*');
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
