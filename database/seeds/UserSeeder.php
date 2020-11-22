@@ -2,7 +2,6 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -11,7 +10,7 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
         User::create([
             'name' => 'Admin User',
