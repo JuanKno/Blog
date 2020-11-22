@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-md-10">
                                 <router-link class="link-dark" to="author"
-                                   v-text="post.user.name" ></router-link
+                                   v-text="user.name" ></router-link
                                 >
                                 <a href="#" class="btn follow">Follow</a>
                                 <span
@@ -330,7 +330,8 @@ export default {
     props: ["slug"],
     data() {
         return {
-            post: {}
+            post: {},
+            user:{},
         };
     },
 
@@ -339,6 +340,7 @@ export default {
             .get("/api/post/" + this.slug)
             .then(response => {
                 this.post = response.data;
+                this.user = response.data.user;
                 // console.log(this.post);
             })
             .catch(e => {

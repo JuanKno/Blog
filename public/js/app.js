@@ -3028,7 +3028,8 @@ __webpack_require__.r(__webpack_exports__);
   props: ["slug"],
   data: function data() {
     return {
-      post: {}
+      post: {},
+      user: {}
     };
   },
   created: function created() {
@@ -3036,7 +3037,7 @@ __webpack_require__.r(__webpack_exports__);
 
     axios.get("/api/post/" + this.slug).then(function (response) {
       _this.post = response.data;
-      console.log(_this.post);
+      _this.user = response.data.user; // console.log(this.post);
     })["catch"](function (e) {
       console.log(e);
     });
@@ -39961,7 +39962,7 @@ var render = function() {
                   _c("router-link", {
                     staticClass: "link-dark",
                     attrs: { to: "author" },
-                    domProps: { textContent: _vm._s(_vm.post.user.name) }
+                    domProps: { textContent: _vm._s(_vm.user.name) }
                   }),
                   _vm._v(" "),
                   _c("a", { staticClass: "btn follow", attrs: { href: "#" } }, [
