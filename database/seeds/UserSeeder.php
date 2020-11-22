@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class UserSeeder extends Seeder
 {
@@ -10,12 +11,13 @@ class UserSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         User::create([
             'name' => 'Admin User',
             'password' => bcrypt('123456'),
-            'email' => 'admin@admin.com'
+            'email' => 'admin@admin.com',
+            'biography' => $faker->text(400),
         ]);
 
         factory(User::class, 50)->create();

@@ -28,28 +28,14 @@
                         <router-link class="nav-link btn btn-sm" to="/"
                             >Home
                         </router-link>
-                    </li>
-
-                    <li class="nav-item ">
-                        <router-link class="nav-link btn btn-sm" to="author"
-                            >Author
-                        </router-link>
-                    </li>
+                    </li>                  
 
                     <li class="nav-item">
-                        <a class="nav-link btn btn-sm text-green" href="login"
-                            >Get Started</a
-                        >
+                        <a class="nav-link btn btn-sm text-green"  href="login"
+                            >Get Started</a>
                     </li>
 
-                    <div class="navbar-item">
-                        <a
-                            class="nav-link btn btn-sm"
-                            href="home"
-                            role="button"
-                        >
-                        </a>
-                    </div>
+
                 </ul>
                 <!-- End Menu -->
                 <!-- Begin Search -->

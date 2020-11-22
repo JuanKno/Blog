@@ -77,7 +77,11 @@
                         <!-- Begin Top Meta -->
                         <div class="row post-top-meta">
                             <div class="col-md-2">
-                                <router-link to="author"
+                                <router-link
+                                    :to="{
+                                        name: 'author',
+                                        params: { id: user.id }
+                                    }"
                                     ><img
                                         class="author-thumb"
                                         src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
@@ -85,9 +89,14 @@
                                 /></router-link>
                             </div>
                             <div class="col-md-10">
-                                <router-link class="link-dark" to="author"
-                                   v-text="user.name" ></router-link
-                                >
+                                <router-link
+                                    class="link-dark"
+                                    :to="{
+                                        name: 'author',
+                                        params: { id: user.id }
+                                    }"
+                                    v-text="user.name"
+                                ></router-link>
                                 <a href="#" class="btn follow">Follow</a>
                                 <span
                                     class="author-description"
@@ -115,9 +124,7 @@
 
                     <!-- Begin Post Content -->
                     <div class="article-post">
-                        <p v-html="post.body">
-
-                        </p>
+                        <p v-html="post.body"></p>
                     </div>
                     <!-- End Post Content -->
 
@@ -165,12 +172,16 @@
                                 <div class="metafooter">
                                     <div class="wrapfooter">
                                         <span class="meta-footer-thumb">
-                                            <a href="author"
+                                            <router-link
+                                                :to="{
+                                                    name: 'author',
+                                                    params: { id: user.id }
+                                                }"
                                                 ><img
                                                     class="author-thumb"
                                                     src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
                                                     alt="Sal"
-                                            /></a>
+                                            /></router-link>
                                         </span>
                                         <span class="author-meta">
                                             <span class="post-name"
@@ -331,7 +342,7 @@ export default {
     data() {
         return {
             post: {},
-            user:{},
+            user: {}
         };
     },
 

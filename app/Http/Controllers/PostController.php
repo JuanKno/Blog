@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -39,6 +40,11 @@ class PostController extends Controller
 
     public function show($post)
     {
-        return Post::where('slug',$post)->with('user')->first();
+        return Post::where('slug', $post)->with('user')->first();
+    }
+
+    public function author($author)
+    {
+        return User::where('id', $author)->with('posts')->first();
     }
 }

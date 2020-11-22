@@ -10,9 +10,10 @@ export default new Router({
             component: require('./views/Home').default
         },
         {
-            path: '/author',
+            path: '/:id',
             name: 'author',
-            component: require('./views/Author').default
+            component: require('./views/Author').default,
+            props: true
         },
         {
             path: '/:slug',
@@ -20,6 +21,7 @@ export default new Router({
             component: require('./views/Post').default,
             props: true
         },
+
         {
             path: '*',
             component: require('./views/404').default

@@ -37,7 +37,7 @@
                     <div class="metafooter">
                         <div class="wrapfooter">
                             <span class="meta-footer-thumb">
-                                <router-link to="author"
+                                <router-link :to="{name:'author', params:{id: storie.user.id}}"
                                     ><img
                                         class="author-thumb"
                                         src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x"
@@ -46,7 +46,7 @@
                             </span>
                             <span class="author-meta">
                                 <span class="post-name"
-                                    ><router-link to="author">{{
+                                    ><router-link :to="{name:'author', params:{id: storie.user.id}}">{{
                                         storie.user.name
                                     }}</router-link></span
                                 ><br />
