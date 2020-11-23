@@ -2479,6 +2479,37 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["id"],
   data: function data() {
@@ -39240,75 +39271,164 @@ var render = function() {
           { staticClass: "listrecent listrelated" },
           _vm._l(_vm.posts, function(post) {
             return _c("div", { key: post.id, staticClass: "authorpostbox" }, [
-              _c("div", { staticClass: "card" }, [
-                _vm._m(2, true),
-                _vm._v(" "),
-                _c("div", { staticClass: "card-block" }, [
-                  _c("h2", { staticClass: "card-title" }, [
-                    _c("a", {
-                      attrs: { href: "post" },
-                      domProps: { textContent: _vm._s(post.title) }
-                    })
-                  ]),
+              _c(
+                "div",
+                { staticClass: "card" },
+                [
+                  _c(
+                    "router-link",
+                    {
+                      attrs: {
+                        to: {
+                          name: "post",
+                          params: { slug: post.slug }
+                        }
+                      }
+                    },
+                    [
+                      _c("img", {
+                        staticClass: "img-fluid img-thumb",
+                        attrs: {
+                          src: "assets/blog/img/demopic/10.jpg",
+                          alt: ""
+                        }
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("h4", {
-                    staticClass: "card-text",
-                    domProps: { textContent: _vm._s(post.extract) }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "metafooter" }, [
-                    _c("div", { staticClass: "wrapfooter" }, [
-                      _vm._m(3, true),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "author-meta" }, [
-                        _c("span", { staticClass: "post-name" }, [
-                          _c("a", { attrs: { href: "author" } }, [
-                            _vm._v(_vm._s(_vm.user.name))
-                          ])
-                        ]),
-                        _c("br"),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "post-date" }, [
-                          _vm._v(_vm._s(post.created_at))
-                        ]),
-                        _c("span", { staticClass: "dot" }),
-                        _c("span", { staticClass: "post-read" }, [
-                          _vm._v("6 min read")
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "post-read-more" }, [
+                  _c("div", { staticClass: "card-block" }, [
+                    _c(
+                      "h2",
+                      { staticClass: "card-title" },
+                      [
+                        _c("router-link", {
+                          attrs: {
+                            to: {
+                              name: "post",
+                              params: { slug: post.slug }
+                            }
+                          },
+                          domProps: { textContent: _vm._s(post.title) }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c("h4", {
+                      staticClass: "card-text",
+                      domProps: { textContent: _vm._s(post.extract) }
+                    }),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "metafooter" }, [
+                      _c("div", { staticClass: "wrapfooter" }, [
                         _c(
-                          "a",
-                          { attrs: { href: "post", title: "Read Story" } },
+                          "span",
+                          { staticClass: "meta-footer-thumb" },
                           [
                             _c(
-                              "svg",
+                              "router-link",
                               {
-                                staticClass: "svgIcon-use",
                                 attrs: {
-                                  width: "25",
-                                  height: "25",
-                                  viewbox: "0 0 25 25"
+                                  to: {
+                                    name: "author",
+                                    params: { id: _vm.user.id }
+                                  }
                                 }
                               },
                               [
-                                _c("path", {
+                                _c("img", {
+                                  staticClass: "author-thumb",
                                   attrs: {
-                                    d:
-                                      "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
-                                    "fill-rule": "evenodd"
+                                    src:
+                                      "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
+                                    alt: "Sal"
                                   }
                                 })
                               ]
                             )
-                          ]
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c("span", { staticClass: "author-meta" }, [
+                          _c(
+                            "span",
+                            { staticClass: "post-name" },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "author",
+                                      params: { id: _vm.user.id }
+                                    }
+                                  }
+                                },
+                                [_vm._v(_vm._s(_vm.user.name))]
+                              )
+                            ],
+                            1
+                          ),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "post-date" }, [
+                            _vm._v(_vm._s(post.created_at))
+                          ]),
+                          _c("span", { staticClass: "dot" }),
+                          _c("span", { staticClass: "post-read" }, [
+                            _vm._v("6 min read")
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "span",
+                          { staticClass: "post-read-more" },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                attrs: {
+                                  to: {
+                                    name: "post",
+                                    params: { slug: post.slug }
+                                  },
+                                  title: "Read Story"
+                                },
+                                domProps: { textContent: _vm._s(post.title) }
+                              },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "svgIcon-use",
+                                    attrs: {
+                                      width: "25",
+                                      height: "25",
+                                      viewbox: "0 0 25 25"
+                                    }
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d:
+                                          "M19 6c0-1.1-.9-2-2-2H8c-1.1 0-2 .9-2 2v14.66h.012c.01.103.045.204.12.285a.5.5 0 0 0 .706.03L12.5 16.85l5.662 4.126a.508.508 0 0 0 .708-.03.5.5 0 0 0 .118-.285H19V6zm-6.838 9.97L7 19.636V6c0-.55.45-1 1-1h9c.55 0 1 .45 1 1v13.637l-5.162-3.668a.49.49 0 0 0-.676 0z",
+                                        "fill-rule": "evenodd"
+                                      }
+                                    })
+                                  ]
+                                )
+                              ]
+                            )
+                          ],
+                          1
                         )
                       ])
                     ])
                   ])
-                ])
-              ])
+                ],
+                1
+              )
             ])
           }),
           0
@@ -39361,34 +39481,6 @@ var staticRenderFns = [
           alt: "Sal"
         }
       })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("a", { attrs: { href: "author" } }, [
-      _c("img", {
-        staticClass: "img-fluid img-thumb",
-        attrs: { src: "assets/blog/img/demopic/10.jpg", alt: "" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "meta-footer-thumb" }, [
-      _c("a", { attrs: { href: "author" } }, [
-        _c("img", {
-          staticClass: "author-thumb",
-          attrs: {
-            src:
-              "https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&d=mm&r=x",
-            alt: "Sal"
-          }
-        })
-      ])
     ])
   }
 ]
